@@ -9,7 +9,6 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Atlas URI
-// const mongoURI = "mongodb+srv://manvi2428singh:manvi1509%40r@cluster0.id1wtxa.mongodb.net/cloudStorageDB?retryWrites=true&w=majority&appName=Cluster0";
 const mongoURI = process.env.MONGO_URI
 // Connect to MongoDB
 mongoose.connect(mongoURI)
