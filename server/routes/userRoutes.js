@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const User = require("../models/User"); // Make sure the path is correct
-const verifyToken = require("../middleware/verifyToken");
+const verifyToken = require("../middlewares/verifyToken");
 require("dotenv").config(); // ✅ Load env variables
 // POST route to create a new user
 router.post("/register", async (req, res) => {
@@ -37,7 +37,7 @@ router.post("/register", async (req, res) => {
 
 
 const jwt = require("jsonwebtoken"); // Optional if you want token-based login
-//const secretKey = "manvi@123"; // Replace with your own secure key or load from .env
+// Replace with your own secure key or load from .env
 const secretKey = process.env.JWT_SECRET; // ✅ Use env secret key
 
 // POST route for login
@@ -68,7 +68,16 @@ router.post("/login", async (req, res) => {
       expiresIn: "30d"
     });
 
-    res.status(200).json({ message: "Login successful", token });
+    //res.status(200).json({ message: "Login successful", token });
+     res.status(200).json({
+      message: "Login successful",
+      token,
+      user: {
+        name: user.username,
+        email: user.email,
+        id: user._id
+      }
+    });
   } catch (err) {
     console.error("❌ Login Error:", err.message);
     res.status(500).json({ error: err.message });
@@ -82,4 +91,10 @@ router.get("/profile", verifyToken, (req, res) => {
     user: req.user // token payload (id, username, email)
   });
 });
+// for logout
+router.post("/logout", (req, res) => {
+  // For JWT, you can just respond OK
+  res.json({ message: "Logged out successfully" });
+});
+
 module.exports = router;

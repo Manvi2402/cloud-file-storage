@@ -1,0 +1,129 @@
+
+/* Page background */
+.register-page {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../assets/dashboardbackground.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Prevent content from touching edges on small screens */
+  box-sizing: border-box;
+}
+
+/* Glassmorphic Box */
+.register-glass {
+  width: 420px;
+  max-width: 100%; /* Prevent overflow */
+  padding: 40px 32px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.register-glass h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+/* Input Fields */
+.register-glass input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Button */
+.register-glass button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #f8f6e7;
+  color: #000;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.register-glass button:hover {
+  background: darkcyan;
+}
+
+/* Bottom Link */
+.register-glass .login-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #f0f0f0;
+}
+
+.register-glass .login-link a {
+  color: #f8f6e7;
+  text-decoration: none;
+}
+
+.register-glass .login-link a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  .register-glass {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .register-glass h2 {
+    font-size: 24px;
+  }
+
+  .register-glass input,
+  .register-glass button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-page {
+    padding: 10px;
+  }
+
+  .register-glass {
+    padding: 25px 15px;
+  }
+
+  .register-glass h2 {
+    font-size: 20px;
+  }
+
+  .register-glass input,
+  .register-glass button {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .register-glass .login-link {
+    font-size: 12px;
+  }
+}

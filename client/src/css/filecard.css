@@ -1,0 +1,81 @@
+.file-card {
+  background-color: #1f1f1f;
+  color: white;
+  width: 250px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+.file-title {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.file-size {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.file-preview-img,
+.file-preview-pdf {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+.file-preview-pdf {
+  height: 200px;
+  background-color: white;
+}
+
+.file-audio,
+.file-video {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.file-no-preview {
+  margin-top: 10px;
+  font-style: italic;
+  color: #aaa;
+}
+
+.file-link {
+  display: block;
+  margin-top: 8px;
+  color: #4fd1c5;
+  text-decoration: none;
+}
+
+.file-link:hover {
+  text-decoration: underline;
+}
+
+.file-copy-btn {
+  margin-top: 10px;
+  background-color: #4fd1c5;
+  color: #1a202c;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.file-copy-btn:hover {
+  background-color: #38b2ac;
+}
+
+/* Add this at the bottom of dashboard.css */
+.file-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  word-break: break-word;
+  overflow: hidden;
+}
